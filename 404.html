@@ -5,6 +5,10 @@
   <script>
     (function() {
       var p = window.location.pathname;
+      if (/^\/c\/\d+/.test(p)) {
+        window.location.href = 'https://www.owmod.net/collection/' + p.match(/(\d+)/)[1];
+        return;
+      }
       if (/^\/\d+/.test(p)) {
         window.location.href = 'https://www.owmod.net/work/view/' + p.match(/^\/(\d+)/)[1];
         return;
